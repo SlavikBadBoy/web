@@ -155,13 +155,64 @@
 //   "Iphone 14",
 //   "Iphone 14",
 // ];
-const phone = {
-  name: "iphone",
-  price: 250,
+// const phone = {
+//   name: "iphone",
+//   price: 250,
+// };
+// const phone2 = phone;
+// phone2.price = 500;
+// phone2.name = "Samsung";
+// console.log(phone.price, phone.name);
+// Object.assign(phone2, phone);
+// console.log(phone === phone2);
+
+// const goods = {
+//   apples: 6,
+//   grapes: 3,
+//   bread: 4,
+//   cheese: 7,s
+// };
+// const newGoods = {};
+// Object.assign(newGoods, goods);
+// console.log(newGoods);
+// console.log(goods);
+// console.log(goods === newGoods);
+// const phone = {
+//   name: "iPhone 12",
+//   price: 850,
+//   color: "gray",
+// };
+// const box = {
+//   ecomaterials: true,
+// };
+// const newPhone = { ...phone, storage: "512 GB", ...box };
+// console.log(newPhone);
+const lion = { hasTail: true, legs: 4 };
+const eagle = { canFly: true };
+const chimera = { ...lion, ...eagle };
+console.log(chimera);
+const friends = [
+  { name: "Mango", online: false },
+  { name: "Kiwi", online: true },
+  { name: "Poly", online: false },
+  { name: "Ajax", online: false },
+];
+// console.log(findFriendByName(friends, 'Poly'));
+// console.log(findFriendByName(friends, 'Chelsy'));
+
+const findFriendsByName = function (friends, friendsName) {
+  for (let friend of friends) {
+    if (friendsName === friend.name) {
+      return friend;
+    }
+  }
 };
-const phone2 = phone;
-phone2.price = 500;
-phone2.name = "Samsung";
-console.log(phone.price, phone.name);
-Object.assign(phone2, phone);
-console.log(phone === phone2);
+const getAllNames = (friends) => {
+  const allNames = [];
+  for (let friend of friends) {
+    allNames.push(friend.name);
+  }
+  return allNames;
+};
+
+console.log(getAllNames(friends));
